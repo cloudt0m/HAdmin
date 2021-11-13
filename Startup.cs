@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using HAdmin.Data;
 
 namespace HAdmin
 {
@@ -27,6 +29,10 @@ namespace HAdmin
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("context")));
+            services.AddScoped<IDataContext>(provider => provider.GetService<DataContext>());
 
             services.AddControllers();
             services.AddSpaStaticFiles(config =>
