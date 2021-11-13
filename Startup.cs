@@ -33,6 +33,21 @@ namespace HAdmin
  {
      config.RootPath = "wwwroot";
  });
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "HAdmin";
+                    document.Info.Description = "admin for test vuetify";
+                    //document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "HWH",
+                        Email = "cloudtom@gmail.com",
+                    };
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +89,9 @@ namespace HAdmin
             });
     }
 );
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseHttpsRedirection();
 
