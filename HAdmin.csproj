@@ -8,10 +8,16 @@
     <None Remove="Microsoft.AspNetCore.StaticFiles" />
     <None Remove="NSwag.AspNetCore" />
     <None Remove="ClientApp\" />
+    <None Remove="Microsoft.AspNetCore.SpaServices" />
+    <None Remove="Microsoft.AspNetCore.SpaServices.Extensions" />
+    <None Remove="Microsoft.Extensions.FileProviders.Physical" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="13.14.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.21" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.12" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientApp\" />
