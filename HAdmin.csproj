@@ -14,6 +14,7 @@
         <None Remove="Microsoft.EntityFrameworkCore" />
         <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
         <None Remove="Microsoft.EntityFrameworkCore.Design" />
+        <None Remove="BCrypt.Net-Next" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
@@ -27,6 +28,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="ClientApp\" />
