@@ -1,23 +1,18 @@
-using System;
-
-namespace HAdmin.Models
+namespace HAdmin.Dtos
 {
-    public class User
+    public class CreateUserDto
     {
-        public Guid Id { get; set; }
         public string Username { get; set; }
         public string IdNumber { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
     }
 
-    public class UserOutput
+    public class UpdateUserDto
     {
-        public Guid Id { get; set; }
         public string IdNumber { get; set; }
-        public string Username { get; set; }
         public string PhoneNumber { get; set; }
-
-
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; }
     }
 }
