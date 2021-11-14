@@ -4,6 +4,16 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Remove="wwwroot\**" />
+        <Content Include="wwwroot\**" Watch="false" />
+    </ItemGroup>
+
     <ItemGroup>
         <None Remove="Microsoft.AspNetCore.StaticFiles" />
         <None Remove="NSwag.AspNetCore" />
@@ -15,6 +25,8 @@
         <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
         <None Remove="Microsoft.EntityFrameworkCore.Design" />
         <None Remove="BCrypt.Net-Next" />
+        <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+        <None Remove="System.IdentityModel.Tokens.Jwt" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
@@ -25,10 +37,12 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-          <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.12" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.0" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="ClientApp\" />
