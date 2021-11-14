@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using HAdmin.Data;
+using HAdmin.Repositories;
 
 namespace HAdmin
 {
@@ -33,6 +34,7 @@ namespace HAdmin
             services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("context")));
             services.AddScoped<IDataContext>(provider => provider.GetService<DataContext>());
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddControllers();
             services.AddSpaStaticFiles(config =>
