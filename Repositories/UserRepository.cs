@@ -53,6 +53,7 @@ namespace HAdmin.Repositories
                 throw new NullReferenceException();
             userToUpdate.PhoneNumber = user.PhoneNumber;
             userToUpdate.IdNumber = user.IdNumber;
+            userToUpdate.FullName = user.FullName;
             userToUpdate.Password = user.Password;
             await _context.SaveChangesAsync();
         }

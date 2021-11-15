@@ -27,7 +27,7 @@ namespace HAdmin.Controllers
         public async Task<ActionResult<IEnumerable<UserOutput>>> GetAllUsers()
         {
             var users = await _userRepository.GetAll();
-            var userResult = users.Select(u => new UserOutput { Id = u.Id, Username = u.Username, IdNumber = u.IdNumber, PhoneNumber = u.PhoneNumber });
+            var userResult = users.Select(u => new UserOutput { Id = u.Id, Username = u.Username, IdNumber = u.IdNumber, FullName = u.FullName, PhoneNumber = u.PhoneNumber });
             return Ok(userResult);
         }
 
@@ -43,6 +43,7 @@ namespace HAdmin.Controllers
                 Id = user.Id,
                 Username = user.Username,
                 IdNumber = user.IdNumber,
+                FullName = user.FullName,
                 PhoneNumber = user.PhoneNumber
             };
 
@@ -58,6 +59,7 @@ namespace HAdmin.Controllers
                 Id = Guid.NewGuid(),
                 Username = createUserDto.Username,
                 IdNumber = createUserDto.IdNumber,
+                FullName = createUserDto.FullName,
                 PhoneNumber = createUserDto.PhoneNumber,
                 Password = hashedPassword
             };
@@ -69,6 +71,7 @@ namespace HAdmin.Controllers
                 Id = user.Id,
                 Username = user.Username,
                 IdNumber = user.IdNumber,
+                FullName = user.FullName,
                 PhoneNumber = user.PhoneNumber
             };
 
@@ -96,6 +99,7 @@ namespace HAdmin.Controllers
                 Id = id,
                 Username = userToUpdate.Username,
                 IdNumber = userToUpdate.IdNumber,
+                FullName = userToUpdate.FullName,
                 PhoneNumber = userToUpdate.PhoneNumber,
                 Password = hashedPassword
             };
@@ -105,6 +109,7 @@ namespace HAdmin.Controllers
                 Id = id,
                 Username = userToUpdate.Username,
                 IdNumber = userToUpdate.IdNumber,
+                FullName = userToUpdate.FullName,
                 PhoneNumber = userToUpdate.PhoneNumber
             };
 
