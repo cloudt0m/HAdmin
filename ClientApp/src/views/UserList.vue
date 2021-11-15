@@ -18,6 +18,7 @@ export default {
 			users: [],
 			headers: [
 				{ text: "使用者名稱", value: "username" },
+				{ text: "姓名", value: "fullName" },
 				{ text: "身分證字號", value: "idNumber" },
 				{ text: "電話", value: "phoneNumber" },
 			],

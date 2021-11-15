@@ -7,8 +7,13 @@
 		<v-card-text>
 			<v-form>
 				<v-text-field
-					label="名稱"
+					label="帳號"
 					v-model="username"
+					disabled
+				/>
+				<v-text-field
+					label="姓名"
+					v-model="fullName"
 					disabled
 				/>
 				<v-text-field
@@ -44,6 +49,7 @@ export default {
 			username: "",
 			idNumber: "",
 			phoneNumber: "",
+			fullName: "",
 		};
 	},
 	methods: {
@@ -58,6 +64,7 @@ export default {
 					this.username = user[0].username;
 					this.idNumber = user[0].idNumber;
 					this.phoneNumber = user[0].phoneNumber;
+					this.fullName = user[0].fullName;
 				});
 		},
 	},
