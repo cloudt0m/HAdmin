@@ -63,6 +63,7 @@ namespace HAdmin.Repositories
             var userToDelete = await _context.Users.FindAsync(id);
             if (userToDelete == null)
                 throw new NullReferenceException();
+            _context.Users.Remove(userToDelete);
             await _context.SaveChangesAsync();
         }
     }
